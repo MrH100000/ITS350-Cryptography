@@ -57,18 +57,18 @@ def main():
 
     print blockList
 
-    key =  genkey(  len(blockList[0])  )
+    key =  genKey(  len(blockList[0])  )
 
     print str(key)
 
-    initialization_vector = genkey(   len(blockList[0])   )
+    initialization_vector = genKey(   len(blockList[0])   )
 
     list_of_ciphers = []
 
     for i in range(len(blockList)):
         initialize_cipher = encrypt1(blockList[i],initialization_vector)
         cipherBlock = encrypt2(initialize_cipher, key)
-        list_of_cipers.append(cipherBlock)
+        list_of_ciphers.append(cipherBlock)
         initialize_cipher = cipherBlock
 
     print list_of_ciphers
